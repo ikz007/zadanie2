@@ -1,0 +1,144 @@
+@import "../../styles/glueGuide";
+
+.navBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background-color: $color_neutral_blackBG;
+  z-index: 1;
+}
+.navBarContent {
+  position: relative;
+  width: 100%;
+}
+.navBackWrapper {
+  float: left;
+}
+.navLabel {
+  display: inline-block;
+  font-size: $font_h1;
+  color: $color_neutral_white;
+  padding: 20px 24px;
+}
+.navLabelWithBack {
+  padding-left: 0;
+}
+.navMenuIcon,
+.navBackIcon {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  font-size: $icon_size1;
+  color: $color_neutral_white;
+  padding: 18px 24px;
+}
+.navBackIcon {
+  display: inline-block;
+  position: inherit;
+  font-size: $icon_size1;
+}
+.navSideOverlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color_neutral_white;
+  opacity: 0;
+  z-index: 1;
+}
+.sideOverlayShow {
+  display: block;
+}
+.sideOverlayHide {
+  display: none;
+}
+.navSideMenu {
+  position: fixed;
+  top: 64px;
+  right: -225px;
+  width: 200px;
+  height: 100%;
+  font-size: $font_h2;
+  background-color: $color_neutral_white;
+  box-shadow: $shadow_style2;
+  padding: 10px;
+  z-index: 1;
+  -webkit-transition: right 0.5s ease-out;
+  -moz-transition: right 0.5s ease-out;
+  -o-transition: right 0.5s ease-out;
+  transition: right 0.5s ease-out;
+}
+.sideMenuShow {
+  right: 0;
+}
+.sideMenuHide {
+  right: -225px;
+}
+.menuItem,
+.menuItem:active,
+.menuItem:focus,
+.menuItem:active:focus {
+  display: block;
+  text-decoration: none;
+  color: $color_neutral_blackBG;
+  padding: 10px;
+}
+.menuItem:hover {
+  background-color: $color_neutral_grey_light;
+}
+.subheader,
+.subheader:active,
+.subheader:focus,
+.subheader:active:focus {
+  display: block;
+  font-size: $font_h1;
+  text-decoration: none;
+  padding: 10px;
+}
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: $color_neutral_grey;
+  margin: 6px;
+}
+.onNavMenu {
+  display: none;
+}
+
+@media all and (min-width: 769px) {
+  .navMenuIcon,
+  .navSideOverlay,
+  .sideOverlayShow,
+  .navSideMenu,
+  .sideMenuShow,
+  .sideMenuHide {
+    display: none;
+  }
+
+  .onNavMenu {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    overflow: auto;
+    font-size: $font_h2;
+    text-align: right;
+    li {
+      float: left;
+    }
+  }
+  .menuItem,
+  .menuItem:active,
+  .menuItem:focus,
+  .menuItem:active:focus {
+    color: $color_neutral_white;
+  }
+  .menuItem:hover {
+    background-color: transparent;
+    color: $color_neutral_grey;
+  }
+}
